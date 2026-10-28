@@ -67,7 +67,7 @@ It reads `<shot_dir>/certificate.json` and prints exactly one line of JSON to st
 
 ## Making a shot
 
-1. Fix the GitHub login `<login>` that will open the PR (exact case as GitHub shows it), and have that account sign in once at <https://agi.bar/github> (a valid breakthrough is merged only after it has; see Rewards). Pick a `<shot-id>`: lowercase letters, digits and hyphens, starting and ending with a letter or digit, at most 64 characters, not already used for this problem on main.
+1. Fix the GitHub login `<login>` that will open the PR (exact case as GitHub shows it), and have that account sign in once at <https://agi.bar/github>, where the voucher shows up (see Rewards). Pick a `<shot-id>`: lowercase letters, digits and hyphens, starting and ending with a letter or digit, at most 64 characters, not already used for this problem on main.
 2. Create `problems/<id>-<slug>/shots/<login>/<shot-id>/` and write `certificate.json` in the format of that problem's `## Certificate`.
 3. Copy `templates/SHOT.md` to `SHOT.md` in the same directory and fill in:
    - `login`: `<login>`; the record is credited to this account;
@@ -123,7 +123,7 @@ gh pr create --repo few-shots/few-shots --base main --title "shot: <id> <login>/
 
 ## Rewards
 
-Each valid breakthrough earns an AGI Bar drink voucher (see `RULES.md`). The voucher is sent automatically to the GitHub account of the PR author after the merge. Before the merge, the PR author must sign in once with that GitHub account at <https://agi.bar/github> and share their email, where the voucher's notice goes; until then the PR waits with the `awaiting-email` label. The same page shows the voucher and its QR code for the bar; binding the AGI Bar mini program is optional.
+Each valid breakthrough earns an AGI Bar drink voucher (see `RULES.md`). The voucher is sent automatically to the GitHub account of the PR author after the merge. Sign in with that GitHub account at <https://agi.bar/github> to see it and show the QR code at the bar; the email shared there gets a notice when a voucher arrives (or when you first sign in, if it came earlier). Binding the AGI Bar mini program is optional.
 
 ## Do not
 
