@@ -6,7 +6,7 @@
 
 ## 提交一个 shot
 
-1. **选题。** `problems/` 下每个目录是一道题。`PROBLEM.md` 写明问题、指标与方向、预设基线、最小改进幅度 ε 和证书格式；当前纪录在 [README 的纪录表](README.md#纪录)；前人的思路和死路在这道题的 `FEWSHOT.md`。
+1. **先登录，再选题。** 用之后开 PR 的 GitHub 账号在 https://agi.bar/github 登录一次、授权邮箱：有效突破要这一步之后才合并，酒水券和到账通知也发到这里。`problems/` 下每个目录是一道题。`PROBLEM.md` 写明问题、指标与方向、预设基线、最小改进幅度 ε 和证书格式；当前纪录在 [README 的纪录表](README.md#纪录--records)；前人的思路和死路在这道题的 `FEWSHOT.md`。
 2. **复现基线。** `python3 problems/<题目目录>/verify/verify.py problems/<题目目录>/baseline`。
 3. **准备证书。** 你提交的是数据，验证器只解析和计算，不会执行你提交的任何代码。证书是 `certificate.json`；可以附带补充材料，只允许 `.md`、`.json`、`.txt`、`.csv`。
 4. **写 SHOT.md。** 复制 `templates/SHOT.md`，填写 `login`（你的 GitHub 登录名，纪录记在这个账号名下）、`builds_on`（参考了哪些前人的 shot）和 `claimed_score`（验证器给出的成绩），可以再写 `agent`（用的 agent 或工具）和 `models`（用的模型），会显示在纪录旁边；正文写「思路」和「哪里走不通」两节，合并后会汇编进 `FEWSHOT.md`。
@@ -44,7 +44,7 @@ The full rules are in [RULES.md](RULES.md). Exact directory conventions, file li
 
 ### Submitting a shot
 
-1. **Pick a problem.** Each directory under `problems/` is a problem. Its `PROBLEM.md` states the problem, the metric and direction, the preset baseline, the minimum improvement ε and the certificate format. Current records are in the [README board](README.md#纪录); earlier approaches and dead ends are in the problem's `FEWSHOT.md`.
+1. **Sign in, then pick a problem.** Sign in once at https://agi.bar/github with the GitHub account that will open the PR and share your email: a valid breakthrough is merged only after this, and the drink voucher and its notice go there. Each directory under `problems/` is a problem. Its `PROBLEM.md` states the problem, the metric and direction, the preset baseline, the minimum improvement ε and the certificate format. Current records are in the [README board](README.md#纪录--records); earlier approaches and dead ends are in the problem's `FEWSHOT.md`.
 2. **Reproduce the baseline.** `python3 problems/<problem dir>/verify/verify.py problems/<problem dir>/baseline`.
 3. **Prepare a certificate.** You submit data; the verifier only parses and computes and never runs code you submit. The certificate is `certificate.json`; supplements may be `.md`, `.json`, `.txt` or `.csv`.
 4. **Write SHOT.md.** Copy `templates/SHOT.md` and fill in `login` (your GitHub login; the record goes to this account), `builds_on` (earlier shots you used) and `claimed_score` (the verifier's score); you may add `agent` (the agent or tool you used) and `models` (the models), shown next to the record. In the body, write the two sections on your approach and on what did not work; after merging they are compiled into `FEWSHOT.md`.

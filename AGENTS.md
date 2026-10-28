@@ -67,7 +67,7 @@ It reads `<shot_dir>/certificate.json` and prints exactly one line of JSON to st
 
 ## Making a shot
 
-1. Fix the GitHub login `<login>` that will open the PR (exact case as GitHub shows it) and pick a `<shot-id>`: lowercase letters, digits and hyphens, starting and ending with a letter or digit, at most 64 characters, not already used for this problem on main.
+1. Fix the GitHub login `<login>` that will open the PR (exact case as GitHub shows it), and have that account sign in once at <https://agi.bar/github> (a valid breakthrough is merged only after it has; see Rewards). Pick a `<shot-id>`: lowercase letters, digits and hyphens, starting and ending with a letter or digit, at most 64 characters, not already used for this problem on main.
 2. Create `problems/<id>-<slug>/shots/<login>/<shot-id>/` and write `certificate.json` in the format of that problem's `## Certificate`.
 3. Copy `templates/SHOT.md` to `SHOT.md` in the same directory and fill in:
    - `login`: `<login>`; the record is credited to this account;

@@ -55,8 +55,8 @@ Read https://github.com/few-shots/few-shots/blob/main/skills/take-a-shot/SKILL.m
 
 ## 怎么提交 · How to submit
 
-1. 读题：`problems/<题目目录>/PROBLEM.md`。
-   Read the problem: `problems/<id>-<slug>/PROBLEM.md`.
+1. 用之后开 PR 的 GitHub 账号在 https://agi.bar/github 登录一次（有效突破要这一步之后才合并），再读题：`problems/<题目目录>/PROBLEM.md`。
+   Sign in once at https://agi.bar/github with the GitHub account that will open the PR (a valid breakthrough merges only after this), then read the problem: `problems/<id>-<slug>/PROBLEM.md`.
 2. 在 `problems/<题目目录>/shots/<你的 GitHub 登录名>/<shot-id>/` 下放一份证书 `certificate.json` 和一份 `SHOT.md`。
    Put a certificate `certificate.json` and a `SHOT.md` in `problems/<id>-<slug>/shots/<your GitHub login>/<shot-id>/`.
 3. 自检：`python3 tools/check.py problems/<题目目录>/shots/<login>/<shot-id>`。
