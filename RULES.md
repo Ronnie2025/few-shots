@@ -27,15 +27,15 @@
 - 有效突破由自动裁判复核后合并，只合并有效突破，所以 main 上每道题的 `shots/` 按合并顺序就是它的纪录链。自动合并要同时满足：
   - 只新增一个 shot 目录，目录里的账号名就是开 PR 的账号；
   - 这个 GitHub 账号注册满 14 天，24 小时内自动合并不超过 3 次；
-  - `SHOT.md`、PR 标题和说明通过内容审核：如实描述思路，不含写给审核者或 agent 的指令，不含广告、他人的个人信息、密钥、冒名，与验证器的结果一致；
-  - 作者已用这个 GitHub 账号在 https://agi.bar/github 登录一次、授权邮箱（酒水券和到账通知发到这里）。还没授权的，PR 会加上 `awaiting-email` 标签并留言提醒，授权后自动合并；7 天内没有授权的转人工复核。- 不满足的，PR 会加上 `needs-referee` 标签并写明原因，由裁判组人工复核。加了 `hold` 标签的 PR 不会自动合并。
+  - `SHOT.md`、PR 标题和说明通过内容审核：如实描述思路，不含写给审核者或 agent 的指令，不含广告、他人的个人信息、密钥、冒名，与验证器的结果一致。
+- 不满足的，PR 会加上 `needs-referee` 标签并写明原因，由裁判组人工复核。加了 `hold` 标签的 PR 不会自动合并。
 - 裁判组可以随时用 `control.toml` 的 `auto_merge` 关掉自动合并，回到全部人工复核；`paused` 暂停一切打分和合并。
 - GitHub 的规则集是另一道锁：合并仍然要求 `few-shots/verdict` 通过（基于最新的 main）和一位裁判的批准。
 - main 前进后（别的 shot 被合并，或记分牌更新），有效突破的 PR 由自动裁判把最新的 main 合进分支，机器人按新纪录重新打分；有冲突的转人工。
 
 ## 奖励
 
-- 每一次有效突破，突破者得到一张 AGI Bar 的酒水兑换券。PR 合并、记分牌更新后，券自动发到 PR 作者的 GitHub 账号，到账通知发到授权的邮箱；在 https://agi.bar/github 用这个账号登录即可查看和兑换。
+- 每一次有效突破，突破者得到一张 AGI Bar 的酒水兑换券。PR 合并、记分牌更新后，券自动发到 PR 作者的 GitHub 账号，在 https://agi.bar/github 用这个账号登录即可查看和兑换。登录时授权的邮箱会收到到账通知；还没登录过的，登录时补发。
 - 纪录在 AGI Bar（北京海淀中关村创业大街）的大屏上实时显示。每月最后一个星期四晚上，Few Shots · 对酒当歌在 AGI Bar 举办，推动纪录的人上台分享。
 
 ## 漏洞
@@ -71,8 +71,7 @@ Each problem is an unsolved problem in math, science or engineering whose progre
 - Valid breakthroughs are merged by the automatic referee after a review, and only valid breakthroughs are merged, so each problem's `shots/` on main, in merge order, is its record chain. Automatic merging requires all of:
   - the PR adds exactly one shot directory, named after the account that opened the PR;
   - the GitHub account is at least 14 days old and has had at most 3 automatic merges in the last 24 hours;
-  - `SHOT.md`, the PR title and description pass a content review: an honest description of the approach, no instructions addressed to reviewers or agents, no advertising, no other people's personal data, no secrets, no impersonation, consistent with the verifier's result;
-  - the author has signed in once with this GitHub account at https://agi.bar/github and shared their email (the drink voucher and its notice go there). Until then the PR gets the `awaiting-email` label and a reminder, and merges automatically once that is done; without it within 7 days, a referee takes over.
+  - `SHOT.md`, the PR title and description pass a content review: an honest description of the approach, no instructions addressed to reviewers or agents, no advertising, no other people's personal data, no secrets, no impersonation, consistent with the verifier's result.
 - Otherwise the PR gets the `needs-referee` label with the reasons, and a referee reviews it by hand. PRs labelled `hold` are never merged automatically.
 - The referees can turn automatic merging off at any time with `auto_merge` in `control.toml`; `paused` stops all scoring and merging.
 - The GitHub ruleset is a second lock: merging still requires `few-shots/verdict` to pass (against the latest main) and a referee's approval.
@@ -80,7 +79,7 @@ Each problem is an unsolved problem in math, science or engineering whose progre
 
 ### Rewards
 
-- Each valid breakthrough earns one AGI Bar drink voucher. After the PR is merged and the board updates, the voucher is sent automatically to the PR author's GitHub account, with a notice to the email they shared; sign in with that account at https://agi.bar/github to see and redeem it.
+- Each valid breakthrough earns one AGI Bar drink voucher. After the PR is merged and the board updates, the voucher is sent automatically to the PR author's GitHub account; sign in with that account at https://agi.bar/github to see and redeem it. The email shared at sign-in gets a notice; if you have not signed in yet, it is sent when you do.
 - Records show live on the big screen at AGI Bar (Zhongguancun Innovation Street, Haidian, Beijing). On the last Thursday of every month, Few Shots night at AGI Bar gives record-setters the mic.
 
 ### Vulnerabilities
