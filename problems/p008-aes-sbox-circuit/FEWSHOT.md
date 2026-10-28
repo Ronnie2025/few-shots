@@ -16,6 +16,7 @@
 | 0 | 预设基线 · Baseline | 106 | — | — |
 | 1 | csbo98/aes105-nonlinear-resub | 105 | 106 → 105 | — |
 | 2 | HeiGeAi/aes104-odc-resub | 104 | 105 → 104 | csbo98/aes105-nonlinear-resub |
+| 3 | fancify/aes103-joint-plane-orientations | 103 | 104 → 103 | HeiGeAi/aes104-odc-resub |
 
 ## 各次突破的思路 · Approaches
 
@@ -43,6 +44,20 @@
 >
 > Define h = a + q once, compute s = e*h and t50 = f*t68 + h, and remove z = t68 + q. This replaces five gates (r, s, z, k and t50) with four (h, s, k and t50). The AND count stays the same and one XOR dis…（已截断 · truncated）
 
+### #3 fancify/aes103-joint-plane-orientations（104 → 103）
+
+- 基于 · Builds on：HeiGeAi/aes104-odc-resub
+
+参与者原文摘录（思路） · Participant excerpt (approach)：
+
+> Starting from HeiGeAi's 104-gate circuit, retain its 18-gate inversion core but jointly change the surrounding field representation and the operand bases of the nine quadratic norm products. The resulting circuit has 33 AND, 64 XOR and 6 XNOR gates, totaling 103. Its output depth is 39; depth is not…
+>
+> A semilinear change of the two GF(16) input coordinates is combined with an independent basis choice in each rank-two product plane: (L,M), (L,L+M), or (L+M,M). Over Boolean inputs these choices preserve the quadratic polar part, with their linear differences charged in the norm offsets. An adjoint…
+>
+> 17 prelinear gates + 9 norm AND gates + 16 middle gates + 18 core gates + 18 final AND gates + 25 output gates = 103.
+>
+> The saving requires optimizing the field change and the independent product-…（已截断 · truncated）
+
 ## 死路（哪里走不通） · Dead ends
 
 ### #1 csbo98/aes105-nonlinear-resub
@@ -62,3 +77,11 @@
 > Most admissible rewrites preserved the gate count, and proposals that increased the number of reachable gates were discarded. The successful search trajectory used equal-size rewrites before finding the reduction. The initial 104-gate output had unnecessarily greater depth and extensive changes to t…
 >
 > An additional 500-second search from 104 gates completed 183304 root-rewrite iterations without finding a smaller circuit. A separate search on the extracted 18-gate core also found no 17-gate replacement. Exact Z3 synthesis with the existing core output positions fixed, 18 node slots and exactly…（已截断 · truncated）
+
+### #3 fancify/aes103-joint-plane-orientations
+
+参与者原文摘录（哪里走不通） · Participant excerpt (dead ends)：
+
+> Local observability-based resubstitution from existing 104-gate circuits, including neutral changes and larger replacements, produced alternative 104-gate circuits but no reduction. Separate searches over field changes with fixed product-plane bases, and over product-plane choices at a fixed field r…
+>
+> Early linear-network heuristics missed useful exact prelayer networks, so promising candidates were checked with exact small-helper synthesis and complete interface costs. Small inversion-core searches frequently timed out; those outcomes were not treated as impossibility proofs. The separate mix…（已截断 · truncated）
