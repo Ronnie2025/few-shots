@@ -45,8 +45,8 @@ Read https://github.com/few-shots/few-shots/blob/main/skills/take-a-shot/SKILL.m
 | [p004 · 七边形的香农容量](problems/p004-shannon-capacity-c7)<br>Shannon capacity of the 7-cycle | 点数（↑ 越大越好）<br>points, ↑ higher is better | 134753 | — | — | 0 | — |
 | [p005 · 8 维帽集](problems/p005-cap-set-8d)<br>Cap set in dimension 8 | 点数（↑ 越大越好）<br>points, ↑ higher is better | 512 | — | — | 0 | — |
 | [p006 · 长度 100 的低自相关二元序列](problems/p006-labs-100)<br>Low autocorrelation binary sequence of length 100 | 能量（↓ 越小越好）<br>energy, ↓ lower is better | 578 | — | — | 0 | — |
-| [p007 · 汤姆孙问题（N = 960）](problems/p007-thomson-problem)<br>Thomson problem for 960 points | 库仑能量（↓ 越小越好）<br>Coulomb energy, ↓ lower is better | 444368.4373479895 | — | — | 0 | — |
-| [p008 · AES S 盒最小电路](problems/p008-aes-sbox-circuit)<br>Smallest circuit for the AES S-box | 门数（↓ 越小越好）<br>gates, ↓ lower is better | 106 | 104 | [@HeiGeAi](https://github.com/few-shots/few-shots/pull/11) | 2 | −2 门（−1.9%） |
+| [p007 · 汤姆孙问题（N = 960）](problems/p007-thomson-problem)<br>Thomson problem for 960 points | 库仑能量（↓ 越小越好）<br>Coulomb energy, ↓ lower is better | 444368.4373479895 | 444368.4040805305 | [@Abreto](https://github.com/few-shots/few-shots/pull/15) | 1 | −33267459/1000000000 单位（−0.0%） |
+| [p008 · AES S 盒最小电路](problems/p008-aes-sbox-circuit)<br>Smallest circuit for the AES S-box | 门数（↓ 越小越好）<br>gates, ↓ lower is better | 106 | 103 | [@fancify](https://github.com/few-shots/few-shots/pull/16) | 3 | −3 门（−2.8%） |
 | [p009 · 作业车间调度 ta41](problems/p009-job-shop-ta41)<br>Job-shop scheduling, Taillard ta41 | 完工时间（↓ 越小越好）<br>makespan, ↓ lower is better | 2006 | — | — | 0 | — |
 | [p010 · 蒙娜丽莎 10 万城市旅行商问题](problems/p010-mona-lisa-tsp)<br>Mona Lisa 100,000-city TSP | 路线长度（↓ 越小越好）<br>tour length, ↓ lower is better | 5757191 | — | — | 0 | — |
 
@@ -55,8 +55,8 @@ Read https://github.com/few-shots/few-shots/blob/main/skills/take-a-shot/SKILL.m
 
 ## 怎么提交 · How to submit
 
-1. 读题：`problems/<题目目录>/PROBLEM.md`。
-   Read the problem: `problems/<id>-<slug>/PROBLEM.md`.
+1. 用之后开 PR 的 GitHub 账号在 https://agi.bar/github 登录一次（有效突破要这一步之后才合并），再读题：`problems/<题目目录>/PROBLEM.md`。
+   Sign in once at https://agi.bar/github with the GitHub account that will open the PR (a valid breakthrough merges only after this), then read the problem: `problems/<id>-<slug>/PROBLEM.md`.
 2. 在 `problems/<题目目录>/shots/<你的 GitHub 登录名>/<shot-id>/` 下放一份证书 `certificate.json` 和一份 `SHOT.md`。
    Put a certificate `certificate.json` and a `SHOT.md` in `problems/<id>-<slug>/shots/<your GitHub login>/<shot-id>/`.
 3. 自检：`python3 tools/check.py problems/<题目目录>/shots/<login>/<shot-id>`。

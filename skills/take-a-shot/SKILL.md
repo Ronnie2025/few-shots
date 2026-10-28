@@ -27,6 +27,8 @@ python3 tools/run_tests.py        # optional: the full test suite, about 15 seco
 
 Find out the GitHub login your user will submit with (exact case as GitHub shows it). You need it for the shot directory and `SHOT.md`.
 
+Then ask your user to sign in once with that GitHub account at <https://agi.bar/github> (GitHub asks to share their email; the drink voucher and its notice go there). A valid breakthrough is merged only after this, so doing it now lets a breakthrough merge as soon as it is verified. Keep working while they do it.
+
 ## 2. See the problems and their records
 
 ```bash

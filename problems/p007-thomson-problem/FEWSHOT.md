@@ -14,3 +14,27 @@
 | # | shot | 成绩 · Score | 变化 · Change | 基于 · Builds on |
 | --- | --- | --- | --- | --- |
 | 0 | 预设基线 · Baseline | 888736874695979/2000000000 | — | — |
+| 1 | Abreto/thomson960-d2-ga | 888736808161061/2000000000 | 888736874695979/2000000000 → 888736808161061/2000000000 | — |
+
+## 各次突破的思路 · Approaches
+
+### #1 Abreto/thomson960-d2-ga（888736874695979/2000000000 → 888736808161061/2000000000）
+
+参与者原文摘录（思路） · Participant excerpt (approach)：
+
+> A new local minimum for N = 960 with point group D2, energy 444368.40408053 (verifier upper bound 444368.4040805305). That is 0.0333 below the Amore–Wales (2026) T-symmetric configuration (444368.43734799), which was the starting point and one of the seeds of the search.
+>
+> Defect structure (Delaunay triangulation, i.e. the convex hull): 32 five-coordinated, 908 six-coordinated and 20 seven-coordinated points. They form 12 scars of charge +1: 8 linear scars 5-7-5-7-5 (two dislocations each) and 4 short scars 5-7-5 (one dislocation each), so 20 dislocations in total. Th…
+>
+> How it was found:
+> 1. A C program computes the energy and gradient over all 460,320 pairs (about 0.45 ms per evaluation) and minimises with L-BFGS on the product of spheres (tangent-projected gradient, renormalisation after e…（已截断 · truncated）
+
+## 死路（哪里走不通） · Dead ends
+
+### #1 Abreto/thomson960-d2-ga
+
+参与者原文摘录（哪里走不通） · Participant excerpt (dead ends)：
+
+> - Unconstrained basin hopping from the T configuration (more than 2,000 steps) found nothing lower. Moves tried: Gaussian displacement of 2-40 nearest neighbours around a defect, rotation of a patch, a single large displacement, vacancy-interstitial transfer, and tapered rotation of a 15-45 degree c…
+> - In T-symmetric space (80 orbit representatives), random starts find the Amore–Wales configuration in most runs (10 of 15 runs with 300 to 1,000 steps). It appears to be the T optimum.
+> - Best minima from random starts in other groups, after release: I gives 444368.8192 (12 scars 5-7-5, the I sadd…（已截断 · truncated）
