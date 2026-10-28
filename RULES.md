@@ -31,7 +31,7 @@
   - 作者已用这个 GitHub 账号在 https://agi.bar/github 登录一次、授权邮箱（酒水券和到账通知发到这里）。还没授权的，PR 会加上 `awaiting-email` 标签并留言提醒，授权后自动合并；7 天内没有授权的转人工复核。- 不满足的，PR 会加上 `needs-referee` 标签并写明原因，由裁判组人工复核。加了 `hold` 标签的 PR 不会自动合并。
 - 裁判组可以随时用 `control.toml` 的 `auto_merge` 关掉自动合并，回到全部人工复核；`paused` 暂停一切打分和合并。
 - GitHub 的规则集是另一道锁：合并仍然要求 `few-shots/verdict` 通过（基于最新的 main）和一位裁判的批准。
-- main 前进后（别的 shot 被合并，或记分牌更新），开放的 PR 要先合并最新的 main，机器人按新纪录重新打分。
+- main 前进后（别的 shot 被合并，或记分牌更新），有效突破的 PR 由自动裁判把最新的 main 合进分支，机器人按新纪录重新打分；有冲突的转人工。
 
 ## 奖励
 
@@ -76,7 +76,7 @@ Each problem is an unsolved problem in math, science or engineering whose progre
 - Otherwise the PR gets the `needs-referee` label with the reasons, and a referee reviews it by hand. PRs labelled `hold` are never merged automatically.
 - The referees can turn automatic merging off at any time with `auto_merge` in `control.toml`; `paused` stops all scoring and merging.
 - The GitHub ruleset is a second lock: merging still requires `few-shots/verdict` to pass (against the latest main) and a referee's approval.
-- When main moves (another shot merged, or a board update), open PRs must merge the latest main first; the bot then rescores them against the new record.
+- When main moves (another shot merged, or a board update), the automatic referee merges the latest main into a breakthrough's branch and the bot rescores it against the new record; conflicts go to a referee.
 
 ### Rewards
 
